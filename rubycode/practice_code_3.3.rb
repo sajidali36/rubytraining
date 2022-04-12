@@ -25,6 +25,7 @@ flag = true
 
 while flag == true
   $password = password_generator($no_of_alphabets, $no_of_numbers, $no_of_symbols)
+  $set_condition == 0
 
   CSV.foreach(("myfile.csv"), "a+") do |row|
     row = row[0].to_s
