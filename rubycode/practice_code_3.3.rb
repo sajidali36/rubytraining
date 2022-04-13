@@ -16,31 +16,22 @@ loop do
   puts "enter number of symbols"
   $no_of_symbols = gets.chomp.to_i
 
-  if $no_of_alphabets > 7 &&  $no_of_numbers > 7 && $no_of_symbols > 7
-    break
-  end
+  break if $no_of_alphabets > 7 &&  $no_of_numbers > 7 && $no_of_symbols > 7
 end
 
 flag = true
 
-while flag == true
+while flag
   $password = password_generator($no_of_alphabets, $no_of_numbers, $no_of_symbols)
   $set_condition == 0
 
   CSV.foreach(("myfile.csv"), "a+") do |row|
-    row = row[0].to_s
-    pass = $password.to_s
-    if row == pass
-      $set_condition = -1
-    end
+    $set_condition = -1 if row[0].to_s == $password.to_s
   end
 
-  if $set_condition == -1
-    redo
-  end
+  redo if $set_condition == -1
 
-  CSV.open("myfile.csv", "a+") do |csv|
-    csv << [$password]
-  end
+  CSV.open("myfile.csv", "a+") { |csv| csv << [$password] }
+
   flag = false
 end
