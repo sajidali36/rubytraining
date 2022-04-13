@@ -1,16 +1,16 @@
 class CountFrequency
-  def compute_frequency(array)
-    dictionary = {}
-    dictionary.default = 0
-    array.each do |i|
-      dictionary[i] += 1
+  def compute_frequency(input)
+    count_occurrence = {}
+    count_occurrence.default = 0
+    input.each do |i|
+      count_occurrence[i] += 1
     end
-    dictionary.each do |x,y|
+    count_occurrence.each do |x,y|
       puts "#{x}=>#{y}"
     end
   end
 end
 
-array = [1, 2, 3, 4, 1, 1, 1, 2, 3, 11, 11, 2, 33]
-obj = CountFrequency.new
-obj.compute_frequency(array)
+input = [1, 2, 3, 4, 1, 1, 1, 2, 3, 11, 11, 2, 33]
+output = CountFrequency.new
+output.compute_frequency(input)
