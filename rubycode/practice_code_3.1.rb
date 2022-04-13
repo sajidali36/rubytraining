@@ -2,12 +2,8 @@ class CountFrequency
   def compute_frequency(input)
     count_occurrence = {}
     count_occurrence.default = 0
-    input.each do |i|
-      count_occurrence[i] += 1
-    end
-    count_occurrence.each do |x,y|
-      puts "#{x}=>#{y}"
-    end
+    input.each { |i| count_occurrence[i] += 1 }
+    count_occurrence.each { |x,y| puts "#{x}=>#{y}" }
   end
 end
 
