@@ -6,8 +6,3 @@ arr.each do |x|
   lst.push(sum)
 end
 puts lst
-
-
-a = "5"
-b = 5
-puts a == b
