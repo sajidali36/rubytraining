@@ -1,8 +1,8 @@
-arr = [1, 2, 3, 4, 5]
-lst = []
+input = [1, 2, 3, 4, 5]
+output = []
 sum = 0
-arr.each do |x|
+input.each do |x|
   sum += x
-  lst.push(sum)
+  output.push(sum)
 end
-puts lst
+puts output
